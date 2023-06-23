@@ -1,0 +1,10 @@
+.card:hover { 
+    cursor: pointer; 
+}
+
+.btn-floating {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    font-size: 25px;
+}

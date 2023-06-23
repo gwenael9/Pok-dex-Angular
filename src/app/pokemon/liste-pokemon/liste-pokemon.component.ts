@@ -6,7 +6,7 @@ import { PokemonService } from "../pokemon.service";
 @Component({
   selector: "app-liste-pokemon",
   templateUrl: "./liste-pokemon.component.html",
-  styles: [".card:hover { cursor: pointer; }"],
+  styleUrls: ["./liste-pokemon.component.css"],
 })
 
 export class ListePokemonComponent implements OnInit {

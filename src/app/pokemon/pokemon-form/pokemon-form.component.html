@@ -12,15 +12,30 @@
                             required
                             pattern="^[a-zA-Z0-9àéèç]{1,25}$"
                             [(ngModel)]="pokemon.name" name="name"
-                            #name="ngModel">
+                            #name="ngModel"
+                            placeholder="Entrer un nom...">
 
                     <!-- message masqué si name est valide ou pas encore modifié -->
                     <div [hidden]="name.valid || name.pristine"
                             class="card-panel red accent-1">
                             Le nom du pokémon est requis (1-25).
                     </div>
-                    
                 </div>
+
+                <!-- Pokemon picture, seulement pour l'ajout de pokémon -->
+                <div *ngIf="isAddForm" class="form-group">
+                    <label for="picture">Image</label>
+                    <input type="url" class="form-control" id="picture"
+                            required
+                            [(ngModel)]="pokemon.picture" name="picture"
+                            #picture="ngModel">
+
+                    <div [hidden]="picture.valid || picture.pristine"
+                            class="card-panel red accent-1">
+                            L'image du pokémon est requise.
+                    </div>
+                </div>
+
 
                 <!-- Pokemon hp -->
                 <div class="form-group">
