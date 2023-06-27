@@ -1,0 +1,12 @@
+.row {
+    padding: 10px;
+}
+
+.card { 
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card-title {
+    font-weight: bold;
+}

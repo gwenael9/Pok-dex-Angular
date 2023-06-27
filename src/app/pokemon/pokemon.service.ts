@@ -23,6 +23,20 @@ export class PokemonService {
     );
   }
 
+  // recherche de pokemon
+  searchPokemonList(term: string): Observable<Pokemon[]> {
+
+    // s'il tape 1 lettre ou aucune, on affiche pas la liste de pokémon
+    if(term.length <= 1) {
+      return of([]);
+    }
+
+    return this.http.get<Pokemon[]>(`api/pokemons/?name=${term}`).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, []))      
+    )
+  }
+
   // méthode qui va maintenir nos changements lors de l'édit de nos pokémons
   updatePokemon(pokemon: Pokemon): Observable<null> {
     const httpOptions = {
